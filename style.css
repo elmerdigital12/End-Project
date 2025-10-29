@@ -1,0 +1,13 @@
+body{font-family:Helvetica; text-align:center;background: #e9e9ff;margin:20px}
+header{margin-bottom:25px}
+#controls{margin-bottom:25px}
+input,select{padding:5px 10px;font-size:16px;margin:0 5px;border-radius:5px;border:1px;}
+#pokemonList{display:flex;flex-wrap:wrap;justify-content:center;gap:20px}
+.pokemon-card{background: #ffffff;padding:15px;border-radius:8px;width:200px;
+.pokemon-card img{width:120px;height:120px;object-fit:contain;}
+.pokemon-card h2{margin:10px; font-size:18px}
+.pokemon-card ul{font-size:14px;text-align:left}}
+
+
+
+
