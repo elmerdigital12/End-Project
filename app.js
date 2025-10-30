@@ -17,7 +17,7 @@ async function loadAllPokemon(){
     const res=await fetch('https://pokeapi.co/api/v2/pokemon?limit=1010'),
         data=await res.json();
     const results=data.results;
-    allPokemon=[];
+    allPokemon=[];                                                      // data
     for(let i=0;i<results.length;i+=50){
         const batch=results.slice(i,i+50),
             promises=batch.map(p=>fetch(p.url).then(r=>r.json()));
@@ -37,12 +37,12 @@ function filterAndSearch(){
 }
 function displayPokemon(arr){
     pokemonList.innerHTML='';
-    if(!arr.length){pokemonList.innerHTML='<p>No Pokémon found!</p>';return;}
+    if(!arr.length){pokemonList.innerHTML='<p>No Pokémon was found!</p>';return;}
     arr.forEach(p=>{
         const c=document.createElement('article');
         c.className='pokemon-card';
-        c.innerHTML=`<h2>${p.name.toUpperCase()}</h2><img src="${p.sprites.front_default}"
-alt="${p.name}"><p><strong>Type:</strong> ${p.types.map(t=>t.type.name).join(', ')}</p>
+        c.innerHTML=`<h2>${p.name.toUpperCase()}</h2><img src="${p.sprites.front_default}"alt="${p.name}">
+<p><strong>Type:</strong> ${p.types.map(t=>t.type.name).join(', ')}</p>
 <ul>${p.stats.map(s=>`<li>${s.stat.name}: ${s.base_stat}</li>`).join('')}</ul>`;
         pokemonList.appendChild(c);
     });
